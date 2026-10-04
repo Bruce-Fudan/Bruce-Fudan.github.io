@@ -1,2 +1,3 @@
-Hello form Fudan University!
-I'm Bruce. 
+Bruce
+Department of Physics, Fudan University.
+Mail: bruce-fudan@outlook.com
