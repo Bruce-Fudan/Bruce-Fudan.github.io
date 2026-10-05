@@ -1,225 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bruce G.</title>
-<link rel="icon" type="image/png" href="1.png">
-<style>
-  :root {
-    --bg: #f6f6f7;
-    --card: #ffffff;
-    --text: #1c1c1e;
-    --muted: #8a8a8e;
-    --border: rgba(0, 0, 0, .07);
-    --radius: 16px;
-  }
-
-  @media (prefers-color-scheme: dark) {
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bruce G.</title>
+  <link rel="icon" type="image/png" href="1.png">
+  <style>
     :root {
-      --bg: #0f0f11;
-      --card: #1a1a1d;
-      --text: #f2f2f4;
-      --muted: #8e8e93;
-      --border: rgba(255, 255, 255, .08);
+      --bg: #f6f6f7;
+      --card: #ffffff;
+      --text: #1c1c1e;
+      --muted: #8a8a8e;
+      --border: rgba(0, 0, 0, .07);
+      --radius: 16px;
     }
-  }
 
-  * { box-sizing: border-box; }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0f11;
+        --card: #1a1a1d;
+        --text: #f2f2f4;
+        --muted: #8e8e93;
+        --border: rgba(255, 255, 255, .08);
+      }
+    }
 
-  html { -webkit-text-size-adjust: 100%; }
+    * {
+      box-sizing: border-box;
+    }
 
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
-                 "Hiragino Sans GB", "Microsoft YaHei", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
 
-  .wrap {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 72px 24px 96px;
-  }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
 
-  .profile {
-    display: flex;
-    align-items: center;
-    gap: 26px;
-    margin-bottom: 40px;
-  }
+    .wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 72px 24px 96px;
+    }
 
-  .avatar {
-    flex: 0 0 88px;
-    width: 88px;
-    height: 88px;
-    border-radius: 50%;
-    overflow: hidden;
-    background: rgba(128, 128, 128, .12);
-    border: 1px solid var(--border);
-  }
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      margin-bottom: 40px;
+    }
 
-  .avatar img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+    .avatar {
+      flex: 0 0 88px;
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: rgba(128, 128, 128, .12);
+      border: 1px solid var(--border);
+    }
 
-  .profile-text h1 {
-    margin: 0 0 4px;
-    font-size: clamp(22px, 3.5vw, 27px);
-    font-weight: 700;
-    letter-spacing: -.02em;
-    line-height: 1.3;
-  }
-
-  .profile-text .affil {
-    margin: 0 0 4px;
-    font-size: 14.5px;
-    color: var(--muted);
-  }
-
-  .profile-text .email {
-    margin: 0;
-    font-size: 14.5px;
-  }
-
-  .profile-text .email a {
-    color: var(--muted);
-    text-decoration: none;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 1px;
-  }
-
-  .profile-text .email a:hover {
-    color: var(--text);
-    border-bottom-color: var(--muted);
-  }
-
-  section {
-    margin-bottom: 36px;
-  }
-
-  section:last-of-type {
-    margin-bottom: 0;
-  }
-
-  h2 {
-    margin: 0 0 14px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-
-  .interests {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 8px;
-  }
-
-  .interests li {
-    font-size: 15px;
-    line-height: 1.6;
-  }
-
-  .interests .k {
-    display: inline-block;
-    min-width: 130px;
-    color: var(--muted);
-    font-size: 13.5px;
-  }
-
-  @media (max-width: 480px) {
-    .interests .k {
+    .avatar img {
       display: block;
-      min-width: 0;
-      margin-bottom: 1px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-  }
 
-  .projects {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
+    .profile-text h1 {
+      margin: 0 0 4px;
+      font-size: clamp(22px, 3.5vw, 27px);
+      font-weight: 700;
+      letter-spacing: -.02em;
+      line-height: 1.3;
+    }
 
-  @media (min-width: 520px) {
-    .projects { grid-template-columns: 1fr 1fr; }
-  }
+    .profile-text .affil {
+      margin: 0 0 4px;
+      font-size: 14.5px;
+      color: var(--muted);
+    }
 
-  .project {
-    display: block;
-    padding: 18px 20px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    text-decoration: none;
-    color: inherit;
-    transition: border-color .2s ease;
-  }
+    .profile-text .email {
+      margin: 0;
+      font-size: 14.5px;
+    }
 
-  .project:hover {
-    border-color: var(--muted);
-  }
+    .profile-text .email a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1px;
+    }
 
-  .project .name {
-    display: block;
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: -.01em;
-    margin-bottom: 3px;
-  }
+    .profile-text .email a:hover {
+      color: var(--text);
+      border-bottom-color: var(--muted);
+    }
 
-  .project .hint {
-    display: block;
-    font-size: 13.5px;
-    color: var(--muted);
-  }
+    section {
+      margin-bottom: 36px;
+    }
 
-  .counter {
-    margin-top: 8px;
-  }
+    section:last-of-type {
+      margin-bottom: 0;
+    }
 
-  .counter img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
+    h2 {
+      margin: 0 0 14px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
 
-  footer {
-    margin-top: 56px;
-    padding-top: 24px;
-    border-top: 1px solid var(--border);
-    font-size: 13px;
-    color: var(--muted);
-  }
+    .interests {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 8px;
+    }
 
-  footer p {
-    margin: 0;
-  }
+    .interests li {
+      font-size: 15px;
+      line-height: 1.6;
+    }
 
-  footer a {
-    color: var(--muted);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-  }
+    .interests .k {
+      display: inline-block;
+      min-width: 130px;
+      color: var(--muted);
+      font-size: 13.5px;
+    }
 
-  footer a:hover {
-    color: var(--text);
-  }
-</style>
+    @media (max-width: 480px) {
+      .interests .k {
+        display: block;
+        min-width: 0;
+        margin-bottom: 1px;
+      }
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    @media (min-width: 520px) {
+      .projects {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .project {
+      display: block;
+      padding: 18px 20px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: inherit;
+      transition: border-color .2s ease;
+    }
+
+    .project:hover {
+      border-color: var(--muted);
+    }
+
+    .project .name {
+      display: block;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -.01em;
+      margin-bottom: 3px;
+    }
+
+    .project .hint {
+      display: block;
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+
+    .counter {
+      margin-top: 8px;
+    }
+
+    .counter img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    footer {
+      margin-top: 56px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer a {
+      color: var(--muted);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    footer a:hover {
+      color: var(--text);
+    }
+  </style>
 </head>
+
 <body>
   <div class="wrap">
 
@@ -275,5 +283,75 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+
+  <script>
+    (function () {
+      // ====== 配置 ======
+      var NTFY_TOPIC = 'dlZPFyJaP3JARFJ30MXPPIyv15QffQtR';//被你发现了~
+      var NTFY_URL = 'https://ntfy.sh/' + NTFY_TOPIC;
+
+      // ====== 解析 User-Agent ======
+      function parseUA(ua) {
+        var os = 'Unknown';
+        var browser = 'Unknown';
+
+        if (/Windows NT 10/.test(ua)) os = 'Windows 10/11';
+        else if (/Windows NT/.test(ua)) os = 'Windows';
+        else if (/Mac OS X/.test(ua) && !/iPhone|iPad/.test(ua)) os = 'macOS';
+        else if (/iPhone/.test(ua)) os = 'iOS (iPhone)';
+        else if (/iPad/.test(ua)) os = 'iPadOS (iPad)';
+        else if (/Android/.test(ua)) os = 'Android';
+        else if (/Linux/.test(ua)) os = 'Linux';
+
+        if (/Edg\//.test(ua)) browser = 'Edge';
+        else if (/OPR\//.test(ua) || /Opera/.test(ua)) browser = 'Opera';
+        else if (/Chrome\//.test(ua) && !/Edg\//.test(ua)) browser = 'Chrome';
+        else if (/Firefox\//.test(ua)) browser = 'Firefox';
+        else if (/Safari\//.test(ua) && !/Chrome/.test(ua)) browser = 'Safari';
+
+        return { os: os, browser: browser };
+      }
+
+      // ====== 发送通知 ======
+      function send(ip) {
+        var ua = navigator.userAgent || '';
+        var parsed = parseUA(ua);
+
+        var body = [
+          'IP: ' + (ip || 'N/A'),
+          'OS: ' + parsed.os,
+          'Browser: ' + parsed.browser,
+          'Time: ' + new Date().toLocaleString('en-US', { timeZone: 'Asia/Shanghai' })
+        ].join('\n');
+
+        fetch(NTFY_URL, {
+          method: 'POST',
+          headers: {
+            'Title': 'New Visitor',
+            'Priority': 'low',
+            'Tags': 'eyes'
+          },
+          body: body
+        }).catch(function () { /* 静默失败 */ });
+      }
+
+      // ====== 获取 IP 并发送 ======
+      function fetchIP(url, parser) {
+        return fetch(url)
+          .then(function (r) { return r.json(); })
+          .then(parser);
+      }
+
+      fetchIP('https://api.ipify.org?format=json', function (d) { return d.ip; })
+        .catch(function () {
+          return fetchIP('https://ipinfo.io/json', function (d) { return d.ip; });
+        })
+        .then(function (ip) { send(ip); })
+        .catch(function () { send(null); });
+
+    })();
+  </script>
+  <p>NOTICE: This site logs anonymous visitor info (IP address, browser type) for basic analytics.</p>
 </body>
+
 </html>
