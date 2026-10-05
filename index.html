@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bruce G. · Fudan Physics</title>
+<style>
+  :root {
+    --bg: #f6f6f7;
+    --card: #ffffff;
+    --text: #1c1c1e;
+    --muted: #8a8a8e;
+    --border: rgba(0, 0, 0, .07);
+    --radius: 16px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f0f11;
+      --card: #1a1a1d;
+      --text: #f2f2f4;
+      --muted: #8e8e93;
+      --border: rgba(255, 255, 255, .08);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Hiragino Sans GB", "Microsoft YaHei", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 72px 24px 96px;
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+    margin-bottom: 40px;
+  }
+
+  .avatar {
+    flex: 0 0 88px;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgba(128, 128, 128, .12);
+    border: 1px solid var(--border);
+  }
+
+  .avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .profile-text h1 {
+    margin: 0 0 4px;
+    font-size: clamp(22px, 3.5vw, 27px);
+    font-weight: 700;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+  }
+
+  .profile-text .affil {
+    margin: 0 0 4px;
+    font-size: 14.5px;
+    color: var(--muted);
+  }
+
+  .profile-text .email {
+    margin: 0;
+    font-size: 14.5px;
+  }
+
+  .profile-text .email a {
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1px;
+  }
+
+  .profile-text .email a:hover {
+    color: var(--text);
+    border-bottom-color: var(--muted);
+  }
+
+  section {
+    margin-bottom: 36px;
+  }
+
+  section:last-of-type {
+    margin-bottom: 0;
+  }
+
+  h2 {
+    margin: 0 0 14px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .interests {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+  }
+
+  .interests li {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .interests .k {
+    display: inline-block;
+    min-width: 130px;
+    color: var(--muted);
+    font-size: 13.5px;
+  }
+
+  @media (max-width: 480px) {
+    .interests .k {
+      display: block;
+      min-width: 0;
+      margin-bottom: 1px;
+    }
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  @media (min-width: 520px) {
+    .projects { grid-template-columns: 1fr 1fr; }
+  }
+
+  .project {
+    display: block;
+    padding: 18px 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color .2s ease;
+  }
+
+  .project:hover {
+    border-color: var(--muted);
+  }
+
+  .project .name {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    margin-bottom: 3px;
+  }
+
+  .project .hint {
+    display: block;
+    font-size: 13.5px;
+    color: var(--muted);
+  }
+
+  .counter {
+    margin-top: 8px;
+  }
+
+  .counter img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  footer p {
+    margin: 0;
+  }
+
+  footer a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  footer a:hover {
+    color: var(--text);
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="profile">
+      <div class="avatar">
+        <img src="1.png" alt="Avatar" loading="lazy" decoding="async">
+      </div>
+      <div class="profile-text">
+        <h1>Bruce G.</h1>
+        <p class="affil">Department of Physics, Fudan University</p>
+        <p class="email">
+          <a href="mailto:bruce-fudan@outlook.com">bruce-fudan@outlook.com</a>
+        </p>
+      </div>
+    </header>
+
+    <section>
+      <h2>Interests</h2>
+      <ul class="interests">
+        <li><span class="k">Hobbies</span> marathon running, cycling, and photography</li>
+        <li><span class="k">Reading</span> science fiction, poetry, philosophy, economics</li>
+        <li><span class="k">Research</span> astrophysics, condensed matter physics, and particle physics</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="projects">
+        <a class="project" href="https://bruce-fudan.github.io/gallery/">
+          <span class="name">My Gallery</span>
+          <span class="hint">Selected photographs</span>
+        </a>
+        <a class="project" href="https://bruce-fudan.github.io/bobing/">
+          <span class="name">博饼</span>
+          <span class="hint">A traditional Mid-Autumn dice game</span>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Visitors</h2>
+      <div class="counter">
+        <img src="https://ipcounter.ihcr.top/" alt="Visitor counter" loading="lazy">
+      </div>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> Bruce G. · Licensed under CC BY-NC-ND 4.0</p>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
