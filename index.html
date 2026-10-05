@@ -328,9 +328,7 @@
         fetch(NTFY_URL, {
           method: 'POST',
           headers: {
-            'Title': 'New Visitor',
-            'Priority': 'low',
-            'Tags': 'eyes'
+            'Title': 'New Visitor'
           },
           body: body
         }).catch(function () { /* 静默失败 */ });
